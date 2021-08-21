@@ -9,73 +9,30 @@ import 'model/hotel_list_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/plugin_api.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_map/flutter_map.dart';
-import 'package:latlong2/latlong.dart';
+
+import 'package:mapbox_gl/mapbox_gl.dart';
 
 
 class MapView extends StatelessWidget {
   static const String route = '/';
 
+  MapboxMapController? mapController;
+
+  void _onMapCreated(MapboxMapController controller) {
+    mapController = controller;
+  }
   @override
   Widget build(BuildContext context) {
-    var markers = <Marker>[
-      Marker(
-        width: 80.0,
-        height: 80.0,
-        point: LatLng(51.5, -0.09),
-        builder: (ctx) => Container(
-          child: FlutterLogo(
-            textColor: Colors.blue,
-            key: ObjectKey(Colors.blue),
-          ),
-        ),
-      ),
-      Marker(
-        width: 80.0,
-        height: 80.0,
-        point: LatLng(53.3498, -6.2603),
-        builder: (ctx) => Container(
-          child: FlutterLogo(
-            textColor: Colors.green,
-            key: ObjectKey(Colors.green),
-          ),
-        ),
-      ),
-      Marker(
-        width: 80.0,
-        height: 80.0,
-        point: LatLng(48.8566, 2.3522),
-        builder: (ctx) => Container(
-          child: FlutterLogo(
-            textColor: Colors.purple,
-            key: ObjectKey(Colors.purple),
-          ),
-        ),
-      ),
-    ];
 
     return Scaffold(
       body:Column(
           children: [
             Flexible(
-              child: FlutterMap(
-                options: MapOptions(
-                  center: LatLng(51.5, -0.09),
-                  zoom: 5.0,
-                ),
-                layers: [
-                  TileLayerOptions(
-                    urlTemplate:
-                    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-                    subdomains: ['a', 'b', 'c'],
-                    // For example purposes. It is recommended to use
-                    // TileProvider with a caching and retry strategy, like
-                    // NetworkTileProvider or CachedNetworkTileProvider
-                    tileProvider: NonCachingNetworkTileProvider(),
-                  ),
-                  MarkerLayerOptions(markers: markers)
-                ],
-              ),
+              child: MapboxMap(
+                onMapCreated: _onMapCreated,
+                accessToken: "pk.eyJ1Ijoib3Zza2kzOSIsImEiOiJjazhpeXB5MzQwOTR1M3FxbG5lbjdwcnZhIn0.i6M7gn5any9lE9C_6sdW4g",
+                initialCameraPosition: const CameraPosition(target: LatLng(0.0, 0.0)),
+              )
             ),
           ],
       ),

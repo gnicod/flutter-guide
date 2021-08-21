@@ -14,8 +14,7 @@ class MapScreen extends StatefulWidget {
   _MapScreenState createState() => _MapScreenState();
 }
 
-class _MapScreenState extends State<MapScreen>
-    with TickerProviderStateMixin {
+class _MapScreenState extends State<MapScreen> with TickerProviderStateMixin {
   AnimationController? animationController;
   List<HotelListData> hotelList = HotelListData.hotelList;
   final ScrollController _scrollController = ScrollController();
@@ -87,17 +86,16 @@ class _MapScreenState extends State<MapScreen>
                           ];
                         },
                         body: Container(
-                          color:
-                              HotelAppTheme.buildLightTheme().backgroundColor,
-                          child: MapView(
+                            color:
+                                HotelAppTheme.buildLightTheme().backgroundColor,
+                            child: MapView(
                                 /**
                                 callback: () {},
                                 hotelData: hotelList[index],
                                 animation: animation,
                                 animationController: animationController!,
                                     **/
-                              )
-                        ),
+                                )),
                       ),
                     )
                   ],

@@ -590,9 +590,9 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: IconButton(
-                          icon: Icon(FontAwesomeIcons.mapMarkerAlt),
-                          onPressed: null // TODO switch to map screen
-                        ),
+                            icon: Icon(FontAwesomeIcons.mapMarkerAlt),
+                            onPressed: null // TODO switch to map screen
+                            ),
                       ),
                     ),
                   ),

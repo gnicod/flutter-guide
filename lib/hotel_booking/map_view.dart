@@ -5,13 +5,11 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'model/hotel_list_data.dart';
 
-
 import 'package:flutter/material.dart';
 import 'package:flutter_map/plugin_api.dart';
 import 'package:flutter/material.dart';
 
 import 'package:mapbox_gl/mapbox_gl.dart';
-
 
 class MapView extends StatelessWidget {
   static const String route = '/';
@@ -21,22 +19,22 @@ class MapView extends StatelessWidget {
   void _onMapCreated(MapboxMapController controller) {
     mapController = controller;
   }
+
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      body:Column(
-          children: [
-            Flexible(
+      body: Column(
+        children: [
+          Flexible(
               child: MapboxMap(
-                onMapCreated: _onMapCreated,
-                accessToken: "pk.eyJ1Ijoib3Zza2kzOSIsImEiOiJjazhpeXB5MzQwOTR1M3FxbG5lbjdwcnZhIn0.i6M7gn5any9lE9C_6sdW4g",
-                initialCameraPosition: const CameraPosition(target: LatLng(0.0, 0.0)),
-              )
-            ),
-          ],
+            onMapCreated: _onMapCreated,
+            accessToken:
+                "pk.eyJ1Ijoib3Zza2kzOSIsImEiOiJjazhpeXB5MzQwOTR1M3FxbG5lbjdwcnZhIn0.i6M7gn5any9lE9C_6sdW4g",
+            initialCameraPosition:
+                const CameraPosition(target: LatLng(0.0, 0.0)),
+          )),
+        ],
       ),
     );
   }
 }
-

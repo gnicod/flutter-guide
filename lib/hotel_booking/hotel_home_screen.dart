@@ -7,8 +7,15 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'filters_screen.dart';
 import 'hotel_app_theme.dart';
+import 'dart:developer';
 
 class HotelHomeScreen extends StatefulWidget {
+  VoidCallback onTapMap = () => {};
+
+  HotelHomeScreen({Key key, @required this.onTapMap}) : super(key: key);
+
+  //const HotelHomeScreen({Key? key, this.onTapMap}) : super(key: key);
+
   @override
   _HotelHomeScreenState createState() => _HotelHomeScreenState();
 }
@@ -586,13 +593,14 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                       borderRadius: const BorderRadius.all(
                         Radius.circular(32.0),
                       ),
-                      onTap: () {},
+                      onTap: () {
+                        print("onTap print home screen");
+                        print(widget.onTapMap);
+                        widget.onTapMap?.call();
+                      },
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: IconButton(
-                            icon: Icon(FontAwesomeIcons.mapMarkerAlt),
-                            onPressed: null // TODO switch to map screen
-                            ),
+                        child: Icon(FontAwesomeIcons.mapMarkerAlt),
                       ),
                     ),
                   ),

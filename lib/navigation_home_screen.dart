@@ -19,8 +19,14 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
 
   @override
   void initState() {
+    VoidCallback onTapMap = () {
+      print('from changeindex');
+      setState(() {
+        screenView = MapScreen();
+      });
+    };
     drawerIndex = DrawerIndex.HOME;
-    screenView = HotelHomeScreen();
+    screenView = HotelHomeScreen({onTapMap: onTapMap});
     super.initState();
   }
 
@@ -51,9 +57,15 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
   void changeIndex(DrawerIndex drawerIndexdata) {
     if (drawerIndex != drawerIndexdata) {
       drawerIndex = drawerIndexdata;
+      VoidCallback onTapMap = () {
+        print('from changeindex');
+        setState(() {
+          screenView = MapScreen();
+        });
+      };
       if (drawerIndex == DrawerIndex.HOME) {
         setState(() {
-          screenView = HotelHomeScreen();
+          screenView = HotelHomeScreen({onTapMap: onTapMap});
         });
       } else if (drawerIndex == DrawerIndex.Map) {
         setState(() {

@@ -10,11 +10,9 @@ import 'hotel_app_theme.dart';
 import 'dart:developer';
 
 class HotelHomeScreen extends StatefulWidget {
-  VoidCallback onTapMap = () => {};
+  final VoidCallback onTapMap;
 
-  HotelHomeScreen({Key key, @required this.onTapMap}) : super(key: key);
-
-  //const HotelHomeScreen({Key? key, this.onTapMap}) : super(key: key);
+  const HotelHomeScreen(this.onTapMap);
 
   @override
   _HotelHomeScreenState createState() => _HotelHomeScreenState();
@@ -594,9 +592,7 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                         Radius.circular(32.0),
                       ),
                       onTap: () {
-                        print("onTap print home screen");
-                        print(widget.onTapMap);
-                        widget.onTapMap?.call();
+                        widget.onTapMap();
                       },
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),

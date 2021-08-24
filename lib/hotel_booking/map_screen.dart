@@ -10,6 +10,10 @@ import 'hotel_app_theme.dart';
 import 'map_view.dart';
 
 class MapScreen extends StatefulWidget {
+  final VoidCallback onTapList;
+
+  const MapScreen(this.onTapList);
+
   @override
   _MapScreenState createState() => _MapScreenState();
 }
@@ -570,7 +574,9 @@ class _MapScreenState extends State<MapScreen> with TickerProviderStateMixin {
                       borderRadius: const BorderRadius.all(
                         Radius.circular(32.0),
                       ),
-                      onTap: () {},
+                      onTap: () {
+                        widget.onTapList();
+                      },
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Icon(FontAwesomeIcons.mapMarkerAlt),

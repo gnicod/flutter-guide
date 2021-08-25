@@ -3,6 +3,7 @@ import 'package:best_flutter_ui_templates/custom_drawer/drawer_user_controller.d
 import 'package:best_flutter_ui_templates/custom_drawer/home_drawer.dart';
 import 'package:best_flutter_ui_templates/feedback_screen.dart';
 import 'package:best_flutter_ui_templates/help_screen.dart';
+import 'package:best_flutter_ui_templates/route_info_screen.dart';
 import 'package:best_flutter_ui_templates/hotel_booking/hotel_home_screen.dart';
 import 'package:best_flutter_ui_templates/hotel_booking/map_screen.dart';
 import 'package:best_flutter_ui_templates/invite_friend_screen.dart';
@@ -71,7 +72,7 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
         });
       } else if (drawerIndex == DrawerIndex.Help) {
         setState(() {
-          screenView = HelpScreen();
+          screenView = RouteInfoScreen();
         });
       } else if (drawerIndex == DrawerIndex.FeedBack) {
         setState(() {

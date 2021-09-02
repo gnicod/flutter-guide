@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 // import 'design_course_app_theme.dart';
-import 'package:best_flutter_ui_templates/hotel_booking/hotel_app_theme.dart';
+import 'package:best_flutter_ui_templates/hotel_app_theme.dart';
 
 class RouteInfoScreen extends StatefulWidget {
   @override
@@ -226,8 +226,7 @@ class _RouteInfoScreenState extends State<RouteInfoScreen>
                                         ),
                                         boxShadow: <BoxShadow>[
                                           BoxShadow(
-                                              color: HotelAppTheme
-                                                  .nearlyBlue
+                                              color: HotelAppTheme.nearlyBlue
                                                   .withOpacity(0.5),
                                               offset: const Offset(1.1, 1.1),
                                               blurRadius: 10.0),
@@ -241,8 +240,7 @@ class _RouteInfoScreenState extends State<RouteInfoScreen>
                                             fontWeight: FontWeight.w600,
                                             fontSize: 18,
                                             letterSpacing: 0.0,
-                                            color: HotelAppTheme
-                                                .nearlyWhite,
+                                            color: HotelAppTheme.nearlyWhite,
                                           ),
                                         ),
                                       ),

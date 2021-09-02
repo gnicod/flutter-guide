@@ -5,6 +5,7 @@ import 'package:best_flutter_ui_templates/hotel_booking/model/hotel_list_data.da
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
+import '../route_info_screen.dart';
 import 'filters_screen.dart';
 import 'hotel_app_theme.dart';
 import 'dart:developer';
@@ -109,7 +110,14 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
                                               curve: Curves.fastOutSlowIn)));
                               animationController?.forward();
                               return HotelListView(
-                                callback: () {},
+                                callback: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) {
+                                      return RouteInfoScreen();
+                                    }),
+                                  );
+                                },
                                 hotelData: hotelList[index],
                                 animation: animation,
                                 animationController: animationController!,

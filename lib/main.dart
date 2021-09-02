@@ -1,11 +1,11 @@
 import 'dart:io';
 import 'dart:ui';
-import 'package:best_flutter_ui_templates/app_theme.dart';
+import 'app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'navigation_home_screen.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
-import 'package:best_flutter_ui_templates/hotel_home_screen.dart';
+import 'hotel_home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

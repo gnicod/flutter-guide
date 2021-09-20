@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'design_course_app_theme.dart';
-import 'package:best_flutter_ui_templates/hotel_app_theme.dart';
+import 'package:walkguide/hotel_app_theme.dart';
 
 class RouteInfoScreen extends StatefulWidget {
   @override

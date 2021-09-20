@@ -1,4 +1,7 @@
+import 'dart:convert';
 import 'dart:ui';
+import 'package:walkguide/providers/route_provider.dart';
+
 import 'calendar_popup_view.dart';
 import 'hotel_list_view.dart';
 import 'package:flutter/material.dart';
@@ -29,10 +32,24 @@ class _HotelHomeScreenState extends State<HotelHomeScreen>
   DateTime startDate = DateTime.now();
   DateTime endDate = DateTime.now().add(const Duration(days: 5));
 
+
   @override
   void initState() {
     animationController = AnimationController(
         duration: const Duration(milliseconds: 1000), vsync: this);
+    log("get Data");
+    print("get Data");
+    var r = RouteProvider();
+    r.fetchRoutes().then((value){
+      print("dentro");
+      log(r.route.name ?? ' route is null');
+      /**
+          Iterable list = json.decode(value);
+          setState(() {
+          followers = list.map((e) => User.fromJson(e)).toList();
+          });
+       **/
+    });
     super.initState();
   }
 

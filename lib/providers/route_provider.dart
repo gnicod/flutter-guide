@@ -10,7 +10,7 @@ class RouteProvider  with ChangeNotifier  {
   late String errorMessage; //error message
   bool loading = false; //loading the page
 
-  Future<bool> fetchRoute(routename) async {
+  Future<bool> fetchRoutes() async {
     setLoading(true);
     // fetch route from the input supplied in the form
     await WalkGuide().fetchRoutes().then((data) {

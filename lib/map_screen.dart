@@ -1,13 +1,13 @@
 import 'dart:collection';
 import 'calendar_popup_view.dart';
 import 'hotel_list_view.dart';
-import 'model/hotel_list_data.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'filters_screen.dart';
 import 'hotel_app_theme.dart';
 import 'map_view.dart';
+import 'models/hotel_list_data.dart';
 
 class MapScreen extends StatefulWidget {
   final VoidCallback onTapList;

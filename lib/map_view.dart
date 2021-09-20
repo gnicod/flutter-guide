@@ -1,14 +1,4 @@
-import 'hotel_app_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-import 'model/hotel_list_data.dart';
-
-import 'package:flutter/material.dart';
-import 'package:flutter_map/plugin_api.dart';
-import 'package:flutter/material.dart';
-
 import 'package:mapbox_gl/mapbox_gl.dart';
 
 class MapView extends StatelessWidget {

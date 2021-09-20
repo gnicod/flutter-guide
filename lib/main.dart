@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'navigation_home_screen.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
-import 'hotel_home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
